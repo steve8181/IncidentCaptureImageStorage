@@ -82,7 +82,7 @@ namespace IncidentCaptureImageStorage
                     recordingFrameRate = recording.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FPS);
                     recordingFrameNumber = recording.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_COUNT);
                     Application.Idle += VideoProcessing;
-                    btnStart.Text = "Stop Extraction";
+                    btnStart.Text = "End Extraction";
                     txtFilePath.Text = ofdVideoFile.FileName;
                 }
                 catch (NullReferenceException except)
