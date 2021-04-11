@@ -90,7 +90,7 @@ namespace IncidentCaptureImageStorage
                     MessageBox.Show(except.Message);
                 }
             }
-            if (btnFileSelection.Text == "Stop Extraction")
+            if (btnFileSelection.Text == "Pause Extraction")
             {
                 recording.Stop();
 
