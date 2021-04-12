@@ -6,11 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Emgu.CV.Util;
+using Emgu.CV;
+using Emgu.CV.Structure;
+
+
 namespace IncidentCaptureImageStorage.Tests
 {
     [TestClass()]
-    public class IncidentCaptureStorageTests
+    public class IncidentCaptureStorageTests : IncidentCaptureStorage
     {
+        
         [TestMethod()]
         public void IncidentCaptureStorageTest()
         {
@@ -18,9 +24,12 @@ namespace IncidentCaptureImageStorage.Tests
         }
 
         [TestMethod()]
-        public void IncidentCaptureStorageTest1()
+        public void FileCaptureTest()
         {
-            Assert.Fail();
+            string expectedFilePath = @"C:\Users\Stephen\Desktop\Duracell 8G\Impractical Jokers Season 3\Impractical jokers S03E26.mp4";
+
+            string actual = IncidentCaptureStorage.VideoProcessing(sender, e);
+            Assert.Equals(expectedFilePath, actual);
         }
     }
 }
