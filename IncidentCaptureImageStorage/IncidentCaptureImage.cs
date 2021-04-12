@@ -25,6 +25,8 @@ namespace IncidentCaptureImageStorage
 
         double recordingFrameNumber = 0, recordingNoOfFrames = 0, recordingFrameRate = 0;
 
+        static string txt1 = "";
+
         public IncidentCaptureStorage()
         {
             InitializeComponent();
@@ -83,7 +85,7 @@ namespace IncidentCaptureImageStorage
                     recordingFrameNumber = recording.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_COUNT);
                     Application.Idle += VideoProcessing;
                     btnStart.Text = "End Extraction";
-                    txtFilePath.Text = ofdVideoFile.FileName;
+                    txt1 = txtFilePath.Text = ofdVideoFile.FileName;
                 }
                 catch (NullReferenceException except)
                 {
@@ -98,6 +100,11 @@ namespace IncidentCaptureImageStorage
                 EndProcess();
                 btnStart.Text = "Restart Extraction";
             }
+        }
+
+        public static string returnedResults()
+        {
+            return txt1.ToString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
