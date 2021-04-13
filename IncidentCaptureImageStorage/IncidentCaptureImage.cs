@@ -104,7 +104,7 @@ namespace IncidentCaptureImageStorage
 
         public static string returnedResults()
         {
-            return txt1.ToString();
+            return txt1;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
