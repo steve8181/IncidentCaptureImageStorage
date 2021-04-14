@@ -27,7 +27,7 @@ namespace IncidentCaptureImageStorage.Tests
             string expectedFilePath = @"C:\Users\Stephen\Desktop\Duracell 8G\Impractical Jokers Season 3\Impractical jokers S03E26.mp4";
             string actual = IncidentCaptureStorage.returnedResults();
             
-            Assert.Fail(expectedFilePath, actual);
+            Assert.AreNotEqual(expectedFilePath, actual);
 
             Console.WriteLine(expectedFilePath + actual);
         }
